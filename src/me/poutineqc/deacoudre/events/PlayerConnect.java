@@ -6,7 +6,6 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerJoinEvent;
 
 import me.poutineqc.deacoudre.DeACoudre;
-import me.poutineqc.deacoudre.instances.GameState;
 
 public class PlayerConnect implements Listener{
 
@@ -16,7 +15,8 @@ public class PlayerConnect implements Listener{
 		
 		if(DeACoudre.getPlugin().getConfig().getBoolean("bungeecord") == true){
 			
-			
+			event.setJoinMessage("Bungee on");
+
 		}else {
 			event.setJoinMessage("Nop");
 		}
