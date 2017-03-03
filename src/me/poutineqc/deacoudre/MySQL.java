@@ -34,7 +34,6 @@ public class MySQL {
 		this.password = config.password;
 
 		connect();
-		
 	}
 
 	public void updateInfo(DeACoudre plugin) {
