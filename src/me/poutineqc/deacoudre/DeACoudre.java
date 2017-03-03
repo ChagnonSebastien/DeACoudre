@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.util.logging.Logger;
 
 import org.bukkit.Bukkit;
+import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.PluginDescriptionFile;
 import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.RegisteredServiceProvider;
@@ -18,6 +19,7 @@ import me.poutineqc.deacoudre.commands.DacSign;
 import me.poutineqc.deacoudre.events.AsyncPlayerChat;
 import me.poutineqc.deacoudre.events.BlockBreak;
 import me.poutineqc.deacoudre.events.ElytraToggle;
+import me.poutineqc.deacoudre.events.PlayerConnect;
 import me.poutineqc.deacoudre.events.PlayerDamage;
 import me.poutineqc.deacoudre.events.PlayerDisconnect;
 import me.poutineqc.deacoudre.events.PlayerInteract;
@@ -29,7 +31,6 @@ import me.poutineqc.deacoudre.guis.ColorsGUI;
 import me.poutineqc.deacoudre.guis.JoinGUI;
 import me.poutineqc.deacoudre.instances.Arena;
 import me.poutineqc.deacoudre.instances.User;
-
 import net.milkbowl.vault.economy.Economy;
 
 public class DeACoudre extends JavaPlugin {
@@ -49,13 +50,17 @@ public class DeACoudre extends JavaPlugin {
 	private DacSign signData;
 	private Updater updater;
 
+	
 	private static Economy econ;
 	public static String NMS_VERSION;
 	public static boolean aboveOneNine;
 
+	private static Plugin plugin;
+	
 	public void onEnable() {
 		final PluginDescriptionFile pdfFile = getDescription();
 		final Logger logger = getLogger();
+		plugin = this;
 
 		NMS_VERSION = getServer().getClass().getPackage().getName().replace(".", ",").split(",")[3];
 		aboveOneNine = NMS_VERSION.startsWith("v1_9") || NMS_VERSION.startsWith("v1_1") || NMS_VERSION.startsWith("v2");
@@ -93,6 +98,16 @@ public class DeACoudre extends JavaPlugin {
 			e.printStackTrace();
 		}
 
+		Bukkit.getServer().getConsoleSender().sendMessage("§d------------------------------------------");
+		Bukkit.getServer().getConsoleSender().sendMessage("§e[DeACoudre] §eVersion Prenium");
+	    if (allowbungee()) {
+	        Bukkit.getServer().getConsoleSender().sendMessage("§e[DeACoudre] §Bungeecord: ON");
+	      } else {
+	        Bukkit.getServer().getConsoleSender().sendMessage("§e[DeACoudre] §cBungeecord: OFF");
+	      }
+	    Bukkit.getServer().getConsoleSender().sendMessage(" ");
+	    Bukkit.getServer().getConsoleSender().sendMessage("§eAuthors PoutineQc and Neturo");
+		Bukkit.getServer().getConsoleSender().sendMessage("§d------------------------------------------");
 		logger.info(pdfFile.getName() + " has been enabled (v" + pdfFile.getVersion() + ")");
 
 		Bukkit.getServer().getScheduler().scheduleSyncDelayedTask(this, new Runnable() {
@@ -160,12 +175,15 @@ public class DeACoudre extends JavaPlugin {
 
 	public void onDisable() {
 		PluginDescriptionFile pdfFile = getDescription();
-		updater.stop();
+		//updater.stop();
 		Logger logger = getLogger();
 
 		logger.info(pdfFile.getName() + " has been disabled.");
 	}
 
+	public static Plugin getPlugin(){
+		return plugin;
+	}
 	private void registerEvents() {
 		PluginManager pm = getServer().getPluginManager();
 
@@ -184,7 +202,7 @@ public class DeACoudre extends JavaPlugin {
 		pm.registerEvents(new BlockBreak(), this);
 		pm.registerEvents(new PlayerInteract(this, mainLanguage), this);
 		pm.registerEvents(updater, this);
-
+		pm.registerEvents(new PlayerConnect(), this);
 		if (aboveOneNine)
 			pm.registerEvents(new ElytraToggle(), this);
 
@@ -265,4 +283,12 @@ public class DeACoudre extends JavaPlugin {
 	public DacSign getSignData() {
 		return signData;
 	}
+	
+	  public boolean allowbungee()
+	  {
+	    if (getConfig().getString("bungeecord").equalsIgnoreCase("true")) {
+	      return true;
+	    }
+	    return false;
+	  }
 }

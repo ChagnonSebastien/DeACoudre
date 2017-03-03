@@ -2,7 +2,7 @@ name: DeACoudre
 version: 2.2.2
 description: The famous DeACoudre plugin remastered.
 load: postworld
-author: PoutineQc
+authors: [PoutineQc, Neturo]
 website: http://poutineqc.ca/plugins/DaC/
 main : me.poutineqc.deacoudre.DeACoudre
 database: false

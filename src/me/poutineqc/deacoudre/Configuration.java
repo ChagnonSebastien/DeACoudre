@@ -60,6 +60,8 @@ public class Configuration {
 	public String user;
 	public String password;
 	public String tablePrefix;
+	
+	public boolean bungeecord;
 
 	public Configuration(DeACoudre plugin) {
 
@@ -96,6 +98,8 @@ public class Configuration {
 		user = config.getString("user", "root");
 		password = config.getString("password");
 		tablePrefix = config.getString("tablePrefix", "deacoudre_");
+		
+		bungeecord = config.getBoolean("bungeecord", false);
 		
 		broadcastStart = config.getBoolean("enabledBroadcasts.broadcastStart", true);
 		broadcastAchievements = config.getBoolean("enabledBroadcasts.broadcastAchievements", true);

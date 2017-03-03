@@ -30,15 +30,6 @@ introInFrontOfEveryMessage: true
 
 
 bungeecord: false
-	lobbyserver: lobby
-
-#Change MOTD
-MOTD: false
-	WAIT: ""
-	STARTED: ""
-	GAME: ""
-	END: ""
-
 ###################################################################
 #                                                                 #
 #                     Gameplay Configuration                      #
