@@ -1,0 +1,25 @@
+
+###################################################################
+#                                                                 #
+#                      DÉEACOUDRE PRÉNIUM                         #
+#                                                                 #
+###################################################################
+
+
+Bungeecord:
+
+	Ajout de ligne dans le config.ylm
+
+MySQL support 
+
+Abilities with configuration
+
+Configurable scoreboard
+
+Vote system
+
+Win rewards
+
+Winner firework
+
+MOTD Support
