@@ -18,6 +18,7 @@ public class BlockBreak implements Listener {
 		DacSign dacSign = DacSign.getDacSign(sign.getLocation());
 		if (dacSign != null)
 			DacSign.removeSign(dacSign);
+		
 	}
 
 }

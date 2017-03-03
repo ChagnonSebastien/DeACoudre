@@ -22,6 +22,7 @@ public class ElytraToggle implements Listener {
 		if (arena == null)
 			return;
 		
+		
 		event.setCancelled(true);
 	}
 
