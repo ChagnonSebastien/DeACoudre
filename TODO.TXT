@@ -8,7 +8,7 @@
 
 Bungeecord:
 
-	Ajout de ligne dans le config.ylm
+	Ajout de ligne dans le config.yml	ligne 32 33
 
 MySQL support 
 
@@ -23,3 +23,5 @@ Win rewards
 Winner firework
 
 MOTD Support
+
+	Ajout de ligne dans le config.yml	ligne 35 a 40
