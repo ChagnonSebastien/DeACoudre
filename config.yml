@@ -28,7 +28,6 @@ tablePrefix: 'deacoudre_'
 # If you want the Plugin's "logo" ([dac] if not changed) to be displayed in front of every messages
 introInFrontOfEveryMessage: true
 
-
 bungeecord: false
 ###################################################################
 #                                                                 #

@@ -129,6 +129,7 @@ public class DeACoudre extends JavaPlugin {
 
 	}
 
+	
 	private void createMySQLTables() {
 		mysql.update("CREATE TABLE IF NOT EXISTS " + config.tablePrefix + "SIGNS ("
 				+ "uuid varchar(64), type varchar(32),"
