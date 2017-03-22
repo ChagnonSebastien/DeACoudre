@@ -203,7 +203,7 @@ public class DeACoudre extends JavaPlugin {
 		pm.registerEvents(new BlockBreak(), this);
 		pm.registerEvents(new PlayerInteract(this, mainLanguage), this);
 		pm.registerEvents(updater, this);
-		pm.registerEvents(new PlayerConnect(), this);
+		pm.registerEvents(new PlayerConnect(this), this);
 		if (aboveOneNine)
 			pm.registerEvents(new ElytraToggle(), this);
 
