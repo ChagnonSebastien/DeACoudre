@@ -25,5 +25,3 @@ Winner firework
 MOTD Support
 
 	Ajout de ligne dans le config.yml	ligne 35 a 40
-	
-	test
