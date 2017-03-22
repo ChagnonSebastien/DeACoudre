@@ -288,6 +288,7 @@ keyWordHelpPool: "Piscine"
 keyWordScoreboardPlayers: "&6Joueurs"
 keyWordScoreboardPoints: "&6Points"
 keyWordScoreboardRound: "Tour"
+keyWordScoreboardTimer: "Temps:"
 
 keyWordJumpFast: "Saute!"
 

@@ -187,15 +187,15 @@ public class Arena {
 
 		objective = scoreboard.registerNewObjective(name, "dummy");
 		objective.setDisplaySlot(DisplaySlot.SIDEBAR);
-		objective.setDisplayName(ChatColor.translateAlternateColorCodes('&',
-				ChatColor.AQUA + name + " &f: " + local.keyWordScoreboardPlayers));
-		objective.getScore(ChatColor.GOLD + "-------------------").setScore(1);
+		objective.setDisplayName("ßeßl-=ßf &eDÈACoudre ßeßl=-");
+		objective.getScore("ß1 ").setScore(15);
+		objective.getScore(ChatColor.GRAY + "ßl-------------------").setScore(14);
+		objective.getScore("ß2 ").setScore(13);
 		objective.getScore(
-				ChatColor.GOLD + local.keyWordGeneralMinimum + " = " + ChatColor.AQUA + String.valueOf(minAmountPlayer))
-				.setScore(minAmountPlayer);
-		objective.getScore(
-				ChatColor.GOLD + local.keyWordGeneralMaximum + " = " + ChatColor.AQUA + String.valueOf(maxAmountPlayer))
-				.setScore(maxAmountPlayer);
+				ChatColor.WHITE + local.keyWordScoreboardPlayers + ": " + ChatColor.GREEN + String.valueOf(minAmountPlayer)+"/"+ String.valueOf(maxAmountPlayer))
+				.setScore(12);
+		objective.getScore("ß3 ").setScore(11);
+		objective.getScore(ChatColor.GRAY + "ßl-------------------").setScore(11);
 
 		if (mysql.hasConnection()) {
 			mysql.update("INSERT INTO " + config.tablePrefix + "ARENAS (name, world, colorIndice) " + "VALUES ('" + name
@@ -262,15 +262,17 @@ public class Arena {
 
 		objective = scoreboard.registerNewObjective(name, "dummy");
 		objective.setDisplaySlot(DisplaySlot.SIDEBAR);
-		objective.setDisplayName(ChatColor.translateAlternateColorCodes('&',
-				ChatColor.AQUA + name + " &f: " + local.keyWordScoreboardPlayers));
-		objective.getScore(ChatColor.GOLD + "-------------------").setScore(1);
+		objective.setDisplayName("ßeßm-=ßf ßeDÈACoudre ßeßm=-");
+		objective.getScore("ß1 ").setScore(15);
+		objective.getScore(ChatColor.GRAY + "ß7ßm-------------------").setScore(14);
+		objective.getScore("ß2 ").setScore(13);
 		objective.getScore(
-				ChatColor.GOLD + local.keyWordGeneralMinimum + " = " + ChatColor.AQUA + String.valueOf(minAmountPlayer))
-				.setScore(minAmountPlayer);
-		objective.getScore(
-				ChatColor.GOLD + local.keyWordGeneralMaximum + " = " + ChatColor.AQUA + String.valueOf(maxAmountPlayer))
-				.setScore(maxAmountPlayer);
+				ChatColor.WHITE + local.keyWordScoreboardPlayers.replace("&", "ß") + ": " + ChatColor.GREEN + String.valueOf(minAmountPlayer)+"/"+ String.valueOf(maxAmountPlayer))
+				.setScore(12);
+		
+		objective.getScore(ChatColor.GRAY + "").setScore(14);
+		objective.getScore("ß3 ").setScore(11);
+		objective.getScore(ChatColor.GRAY + "ßm-------------------").setScore(11);
 
 		Logger logger = plugin.getLogger();
 		boolean maxChanged = false;

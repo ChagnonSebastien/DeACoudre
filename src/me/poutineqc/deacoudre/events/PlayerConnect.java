@@ -9,6 +9,8 @@ import org.bukkit.event.player.PlayerJoinEvent;
 import me.poutineqc.deacoudre.DeACoudre;
 import me.poutineqc.deacoudre.Language;
 import me.poutineqc.deacoudre.PlayerData;
+import me.poutineqc.deacoudre.instances.Arena;
+import me.poutineqc.deacoudre.instances.User;
 
 public class PlayerConnect implements Listener{
 
@@ -23,7 +25,7 @@ public class PlayerConnect implements Listener{
 	public void onJoin(PlayerJoinEvent event){
 		Player player = event.getPlayer();
 		
-		if(DeACoudre.getPlugin().getConfig().getBoolean("bungeecord") == true){	
+		if(DeACoudre.getPlugin().getConfig().getBoolean("bungeecord.enabled") == true){	
 			
 			Language local = playerData.getLanguageOfPlayer(player);
 			
@@ -32,6 +34,16 @@ public class PlayerConnect implements Listener{
 			local.sendMsg(allplayer, local.joinGameOthers.replace("%player%", player.getName())
 					.replace("%amountInGame%", String.valueOf(Bukkit.getOnlinePlayers().size())));
 			}
+			
+			Arena arena = Arena.getArenaFromPlayer(player);
+			
+			arena = Arena.getArenaFromName(DeACoudre.getPlugin().getConfig().getString("bungeecord.arenaName"));
+			if (arena == null) {
+				local.sendMsg(player, local.errorArenaNotExist.replace("%arena%", DeACoudre.getPlugin().getConfig().getString("bungeecord.arenaName")));
+				return;
+			}
+
+			arena.addPlayerToTeam(player, true);
 
 		}else {
 			
