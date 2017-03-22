@@ -249,6 +249,7 @@ public class Language {
 	public String editErrorNoArena;
 	public String editColorChoosen;
 	public String keyWordScoreboardRound;
+	public String keyWordScoreboardTimer;
 	public String startAutoFail;
 	public String convertAlreadyDone;
 	public String convertStart;
@@ -294,6 +295,8 @@ public class Language {
 		pluginDevelopper = languageData.getString("pluginDevelopper", "&3Developped by: &7%developper%");
 		pluginVersion = languageData.getString("pluginVersion", "&3Version: &7%version%");
 		pluginHelp = languageData.getString("pluginHelp", "&3Type &b/%command% help &3 for the list of commands.");
+		
+		keyWordScoreboardTimer = languageData.getString("keyWordScoreboardTimer", "Timer");
 		
 		errorNoPermission = languageData.getString("errorNoPermission", "&cYou don't have the permission to do that!");
 		errorPermissionHelp = languageData.getString("errorPermissionHelp", "&cYou do not have any permissions in this category.");

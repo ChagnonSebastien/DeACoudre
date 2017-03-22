@@ -80,7 +80,7 @@ public class Arena {
 	private Team spectator;
 
 	private static List<Arena> arenas = new ArrayList<Arena>();
-
+	
 	public User getActivePlayer() {
 		return activePlayer;
 	}
@@ -270,7 +270,7 @@ public class Arena {
 				ChatColor.WHITE + local.keyWordScoreboardPlayers.replace("&", "§") + ": " + ChatColor.GREEN + String.valueOf(minAmountPlayer)+"/"+ String.valueOf(maxAmountPlayer))
 				.setScore(12);
 		
-		objective.getScore(ChatColor.GRAY + "").setScore(14);
+		objective.getScore(ChatColor.GRAY + local.keyWordScoreboardTimer+" :").setScore(14);
 		objective.getScore("§3 ").setScore(11);
 		objective.getScore(ChatColor.GRAY + "§m-------------------").setScore(11);
 
@@ -1587,6 +1587,7 @@ public class Arena {
 
 							Language local = playerData.getLanguageOfPlayer(user);
 
+							objective.getScore(ChatColor.GRAY + local.keyWordScoreboardTimer+" :").setScore(14);
 							Utils.sendTitle(user.getPlayer(),
 									JsonBuilder.getJson(new JsonElement(String.valueOf(time / 20), ChatColor.GOLD, true,
 											false, false, false, false)),
